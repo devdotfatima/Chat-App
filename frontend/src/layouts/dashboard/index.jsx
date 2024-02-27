@@ -66,13 +66,13 @@ const DashboardLayout = () => {
       boxSizing: "border-box",
     },
   }));
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event) => {
     setChecked(event.target.checked);
     onToggleMode();
   };
 
   return (
-    <>
+    <Stack direction={"row"}>
       <Box
         p={2}
         sx={{
@@ -130,7 +130,7 @@ const DashboardLayout = () => {
         </Stack>
       </Box>
       <Outlet />
-    </>
+    </Stack>
   );
 };
 
