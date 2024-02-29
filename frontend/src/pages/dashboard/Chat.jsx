@@ -31,7 +31,7 @@ const Chat = () => {
         boxShadow: theme.shadows[1],
       }}
     >
-      <Stack p={3} spacing={2}>
+      <Stack p={3} spacing={2} sx={{ maxHeight: "100vh" }}>
         <Stack
           direction={"row"}
           alignItems={"center"}
@@ -59,26 +59,26 @@ const Chat = () => {
             <Button variant="text">Archive</Button>
           </Stack>
           <Divider />
-          <Stack sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}>
-            <SimpleBarStyle timeout={500} clickOnTrack={false}>
-              <Stack spacing={2.4}>
-                {/* <Typography variant="subtitle2" sx={{ color: "#676667" }}>
+        </Stack>
+        <Stack sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}>
+          <SimpleBarStyle timeout={500} clickOnTrack={false}>
+            <Stack spacing={2.4}>
+              {/* <Typography variant="subtitle2" sx={{ color: "#676667" }}>
                   Pinned
                 </Typography> */}
-                {/* Chat List */}
-                {/* {ChatList.filter((el) => el.pinned).map((el, idx) => {
+              {/* Chat List */}
+              {/* {ChatList.filter((el) => el.pinned).map((el, idx) => {
                   return <ChatElement {...el} />;
                 })} */}
-                <Typography variant="subtitle2" sx={{ color: "#676667" }}>
-                  All Chats
-                </Typography>
-                {/* Chat List */}
-                {ChatList.filter((el) => !el.pinned).map((el, idx) => {
-                  return <ChatElement {...el} />;
-                })}
-              </Stack>
-            </SimpleBarStyle>
-          </Stack>
+              <Typography variant="subtitle2" sx={{ color: "#676667" }}>
+                All Chats
+              </Typography>
+              {/* Chat List */}
+              {ChatList.filter((el) => !el.pinned).map((el, idx) => {
+                return <ChatElement {...el} />;
+              })}
+            </Stack>
+          </SimpleBarStyle>
         </Stack>
       </Stack>
     </Box>
