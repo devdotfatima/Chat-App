@@ -1,2 +1,9 @@
-export {default as ChatHeader} from "./Header";
-export {default as ChatFooter} from "./Footer";
+export { default as ChatHeader } from "./Header";
+export { default as ChatFooter } from "./Footer";
+export { default as DocMessage } from "./DocMsg.jsx";
+export { default as LinkMessage } from "./LinkMsg.jsx";
+export { default as Timeline } from "./Timeline.jsx";
+export { default as TextMessage } from "./TextMsg.jsx";
+export { default as ReplyMessage } from "./ReplyMsg.jsx";
+export { default as MessagsDropDown } from "./MessagsDropDown.jsx";
+export { default as MediaMessage } from "./MediaMsg.jsx";

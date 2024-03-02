@@ -1,7 +1,9 @@
 import { Switch } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { useState } from "react";
+import useSettings from "../hooks/useSettings";
 
-const AntSwitch = styled(Switch)(({ theme }) => ({
+const CustomSwitch = styled(Switch)(({ theme }) => ({
   width: 40,
   height: 20,
   padding: 0,
@@ -45,4 +47,14 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
+const AntSwitch = () => {
+  const [checked, setChecked] = useState(true);
+  const { onToggleMode } = useSettings();
+
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+    onToggleMode();
+  };
+  return <CustomSwitch checked={checked} onChange={handleChange} />;
+};
 export default AntSwitch;

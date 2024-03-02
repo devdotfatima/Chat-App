@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Stack, useTheme } from "@mui/material";
 import { useSearchParams } from "react-router-dom";
 import ChatComponent from "./Conversation";
-import Chat from "./Chat";
+import ChatList from "./ChatList";
 
 const GeneralApp = () => {
   const theme = useTheme();
@@ -11,7 +11,7 @@ const GeneralApp = () => {
   return (
     <>
       <Stack direction="row" sx={{ width: "100%" }}>
-        <Chat />
+        <ChatList />
         <Box
           sx={{
             height: "100%",

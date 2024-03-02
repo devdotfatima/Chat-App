@@ -13,12 +13,12 @@ import {
   Search,
   SearchIconWrapper,
   StyledInputBase,
-} from "../../components/Search";
+} from "../../components/Search/index.js";
 import { SimpleBarStyle } from "../../components/Scrollbar.jsx";
-import ChatElement from "../../components/ChatElement";
-import { ChatList } from "../../data";
+import ChatElement from "../../components/ChatElement.jsx";
+import { ChatListData } from "../../data/index.js";
 
-const Chat = () => {
+const ChatList = () => {
   const theme = useTheme();
 
   return (
@@ -74,8 +74,8 @@ const Chat = () => {
                 All Chats
               </Typography>
               {/* Chat List */}
-              {ChatList.filter((el) => !el.pinned).map((el, idx) => {
-                return <ChatElement {...el} />;
+              {ChatListData.filter((el) => !el.pinned).map((el, idx) => {
+                return <ChatElement {...el} key={idx} />;
               })}
             </Stack>
           </SimpleBarStyle>
@@ -85,4 +85,4 @@ const Chat = () => {
   );
 };
 
-export default Chat;
+export default ChatList;

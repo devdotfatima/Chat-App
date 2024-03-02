@@ -46,7 +46,7 @@ const Nav_Setting = [
   },
 ];
 
-const ChatList = [
+const ChatListData = [
   {
     id: 0,
     img: faker.image.avatar(),
@@ -224,7 +224,7 @@ export {
   Profile_Menu,
   Nav_Setting,
   Nav_Buttons,
-  ChatList,
+  ChatListData,
   Chat_History,
   Message_options,
 };

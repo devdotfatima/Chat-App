@@ -1,19 +1,22 @@
 import { Stack, Box } from "@mui/material";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useTheme } from "@mui/material/styles";
 import { SimpleBarStyle } from "../../components/Scrollbar";
 
-import { ChatHeader, ChatFooter } from "../../components/Chat";
+import {
+  ChatHeader,
+  ChatFooter,
+  Timeline,
+  MediaMessage,
+  MessagsDropDown,
+  ReplyMessage,
+  LinkMessage,
+  DocMessage,
+  TextMessage,
+} from "../../components/Chat";
 import useResponsive from "../../hooks/useResponsive";
 import { Chat_History } from "../../data";
-import {
-  DocMsg,
-  LinkMsg,
-  MediaMsg,
-  ReplyMsg,
-  TextMsg,
-  Timeline,
-} from "../../sections/dashboard/Conversation";
+
 // import { useDispatch, useSelector } from "react-redux";
 // import {
 //   FetchCurrentMessages,
@@ -48,7 +51,7 @@ const Conversation = ({ isMobile, menu }) => {
             case "divider":
               return (
                 // Timeline
-                <Timeline el={el} />
+                <Timeline el={el} key={idx} />
               );
 
             case "msg":
@@ -56,30 +59,30 @@ const Conversation = ({ isMobile, menu }) => {
                 case "img":
                   return (
                     // Media Message
-                    <MediaMsg el={el} menu={menu} />
+                    <MediaMessage el={el} menu={menu} key={idx} />
                   );
 
                 case "doc":
                   return (
                     // Doc Message
-                    <DocMsg el={el} menu={menu} />
+                    <DocMessage el={el} menu={menu} key={idx} />
                   );
                 case "Link":
                   return (
                     //  Link Message
-                    <LinkMsg el={el} menu={menu} />
+                    <LinkMessage el={el} menu={menu} key={idx} />
                   );
 
                 case "reply":
                   return (
                     //  ReplyMessage
-                    <ReplyMsg el={el} menu={menu} />
+                    <ReplyMessage el={el} menu={menu} key={idx} />
                   );
 
                 default:
                   return (
                     // Text Message
-                    <TextMsg el={el} menu={menu} />
+                    <TextMessage el={el} menu={menu} key={idx} />
                   );
               }
 
