@@ -8,7 +8,6 @@ import {
   ChatFooter,
   Timeline,
   MediaMessage,
-  MessagsDropDown,
   ReplyMessage,
   LinkMessage,
   DocMessage,

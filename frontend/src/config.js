@@ -1,6 +1,6 @@
 // @mui
-import { enUS, frFR, zhCN, viVN, arSD } from '@mui/material/locale';
-
+import { enUS, frFR, zhCN, viVN, arSD } from "@mui/material/locale";
+import { Camera, File, Image, Sticker, User } from "phosphor-react";
 // routes
 import { PATH_DASHBOARD } from "./routes/paths";
 
@@ -25,40 +25,71 @@ export const NAVBAR = {
 
 export const allLangs = [
   {
-    label: 'English',
-    value: 'en',
+    label: "English",
+    value: "en",
     systemValue: enUS,
-    icon: '/assets/icons/flags/ic_flag_en.svg',
+    icon: "/assets/icons/flags/ic_flag_en.svg",
   },
   {
-    label: 'French',
-    value: 'fr',
+    label: "French",
+    value: "fr",
     systemValue: frFR,
-    icon: '/assets/icons/flags/ic_flag_fr.svg',
+    icon: "/assets/icons/flags/ic_flag_fr.svg",
   },
   {
-    label: 'Vietnamese',
-    value: 'vn',
+    label: "Vietnamese",
+    value: "vn",
     systemValue: viVN,
-    icon: '/assets/icons/flags/ic_flag_vn.svg',
+    icon: "/assets/icons/flags/ic_flag_vn.svg",
   },
   {
-    label: 'Chinese',
-    value: 'cn',
+    label: "Chinese",
+    value: "cn",
     systemValue: zhCN,
-    icon: '/assets/icons/flags/ic_flag_cn.svg',
+    icon: "/assets/icons/flags/ic_flag_cn.svg",
   },
   {
-    label: 'Arabic (Sudan)',
-    value: 'ar',
+    label: "Arabic (Sudan)",
+    value: "ar",
     systemValue: arSD,
-    icon: '/assets/icons/flags/ic_flag_sa.svg',
+    icon: "/assets/icons/flags/ic_flag_sa.svg",
   },
 ];
 
 export const defaultLang = allLangs[0]; // English
 
-
+export const Actions = [
+  {
+    color: "#4da5fe",
+    icon: <Image size={24} />,
+    y: 102,
+    title: "Photo/Video",
+  },
+  {
+    color: "#1b8cfe",
+    icon: <Sticker size={24} />,
+    y: 172,
+    title: "Stickers",
+  },
+  {
+    color: "#0172e4",
+    icon: <Camera size={24} />,
+    y: 242,
+    title: "Image",
+  },
+  {
+    color: "#0159b2",
+    icon: <File size={24} />,
+    y: 312,
+    title: "Document",
+  },
+  {
+    color: "#013f7f",
+    icon: <User size={24} />,
+    y: 382,
+    title: "Contact",
+  },
+];
 
 // DEFAULT ROOT PATH
 export const DEFAULT_PATH = PATH_DASHBOARD.general.app; // as '/app'

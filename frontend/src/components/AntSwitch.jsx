@@ -47,13 +47,12 @@ const CustomSwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-const AntSwitch = () => {
+const AntSwitch = ({ callback }) => {
   const [checked, setChecked] = useState(true);
-  const { onToggleMode } = useSettings();
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
-    onToggleMode();
+    callback();
   };
   return <CustomSwitch checked={checked} onChange={handleChange} />;
 };

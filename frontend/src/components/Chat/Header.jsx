@@ -13,9 +13,10 @@ import {
 import { useTheme } from "@mui/material/styles";
 import { CaretDown, MagnifyingGlass, Phone, VideoCamera } from "phosphor-react";
 import { faker } from "@faker-js/faker";
-import { useSearchParams } from "react-router-dom";
 import useResponsive from "../../hooks/useResponsive";
 import StyledBadge from "../StyledBadge";
+import { useDispatch, useSelector } from "../../redux/store";
+import { ToggleSidebar } from "../../redux/slices/app";
 
 const Conversation_Menu = [
   {
@@ -33,9 +34,13 @@ const Conversation_Menu = [
 ];
 
 const ChatHeader = () => {
+  const dispatch = useDispatch();
   const isMobile = useResponsive("between", "md", "xs", "sm");
-  const [searchParams, setSearchParams] = useSearchParams();
   const theme = useTheme();
+
+  // const { current_conversation } = useSelector(
+  //   (state) => state.conversation.direct_chat
+  // );
 
   const [conversationMenuAnchorEl, setConversationMenuAnchorEl] =
     React.useState(null);
@@ -65,8 +70,7 @@ const ChatHeader = () => {
       >
         <Stack
           onClick={() => {
-            searchParams.set("open", true);
-            setSearchParams(searchParams);
+            dispatch(ToggleSidebar());
           }}
           spacing={2}
           direction="row"

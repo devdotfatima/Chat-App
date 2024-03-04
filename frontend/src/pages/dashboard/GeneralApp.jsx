@@ -3,10 +3,17 @@ import { Box, Stack, useTheme } from "@mui/material";
 import { useSearchParams } from "react-router-dom";
 import ChatComponent from "./Conversation";
 import ChatList from "./ChatList";
+import { useSelector } from "../../redux/store";
+
+import Contact from "./RightSidebar/Contact";
+import SharedMessages from "./RightSidebar/SharedMessages";
+import StarredMessages from "./RightSidebar/StarredMessages";
 
 const GeneralApp = () => {
   const theme = useTheme();
   const [searchParams] = useSearchParams();
+
+  const { sideBar } = useSelector((state) => state.app);
 
   return (
     <>
@@ -15,11 +22,9 @@ const GeneralApp = () => {
         <Box
           sx={{
             height: "100%",
-            width:
-              //  sideBar.open
-              //   ? `calc(100vw - 740px )`
-              //   :
-              "calc(100vw - 420px )",
+            width: sideBar.open
+              ? `calc(100vw - 740px )`
+              : "calc(100vw - 420px )",
             backgroundColor:
               theme.palette.mode === "light"
                 ? "#FFF"
@@ -33,6 +38,22 @@ const GeneralApp = () => {
         >
           <ChatComponent />
         </Box>
+        {sideBar.open &&
+          (() => {
+            switch (sideBar.type) {
+              case "CONTACT":
+                return <Contact />;
+
+              case "STARRED":
+                return <StarredMessages />;
+
+              case "SHARED":
+                return <SharedMessages />;
+
+              default:
+                break;
+            }
+          })()}
       </Stack>
     </>
   );
